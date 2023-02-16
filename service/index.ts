@@ -20,16 +20,16 @@ class Request {
     });
   }
   get<T = any>(config: AxiosRequestConfig) {
-    return this.request({ ...config, method: "get" });
+    return this.request<T>({ ...config, method: "get" });
   }
-  post<T = any>(config: AxiosRequestConfig<T>) {
-    return this.request({ ...config, method: "post" });
+  post<T = any>(config: AxiosRequestConfig) {
+    return this.request<T>({ ...config, method: "post" });
   }
-  delete<T = any>(config: AxiosRequestConfig<T>) {
-    return this.request({ ...config, method: "delete" });
+  delete<T = any>(config: AxiosRequestConfig) {
+    return this.request<T>({ ...config, method: "delete" });
   }
-  put<T = any>(config: AxiosRequestConfig<T>) {
-    return this.request({ ...config, method: "put" });
+  put<T = any>(config: AxiosRequestConfig) {
+    return this.request<T>({ ...config, method: "put" });
   }
 }
 

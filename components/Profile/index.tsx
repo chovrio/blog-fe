@@ -2,10 +2,14 @@ import { FC } from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
 const Profile: FC = () => {
+  const local =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_BASEURL_DEV
+      : process.env.NEXT_PUBLIC_BASEURL_PROD;
   return (
     <div className={styles.profile}>
       <Image
-        src="/api/avactor/chovrio.jpg"
+        src={`${local}/avactor/${process.env.NEXT_PUBLIC_NAME}.jpg`}
         alt="avactor"
         width={150}
         height={150}
