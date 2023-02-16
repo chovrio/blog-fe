@@ -1,0 +1,66 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-image: url(/xia.jpg);
+  color: #fff;
+  .title {
+    height: 55px;
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+    line-height: 55px;
+    .name {
+      flex: 1;
+      padding-left: 10px;
+    }
+    .more {
+      display: block;
+      padding-right: 30px;
+      cursor: pointer;
+      .progress {
+        position: absolute;
+        top: 45px;
+        width: 0px;
+        height: 3px;
+        background-color: skyblue;
+        transition: width ease 0.5s;
+      }
+    }
+    .more:hover {
+      .progress {
+        width: 20px;
+      }
+    }
+  }
+  .description {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 40vh;
+  }
+  .down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: move 1.5s ease infinite alternate;
+    display: flex;
+    flex-direction: column;
+  }
+  @keyframes move {
+    0% {
+      bottom: 20px;
+      opacity: 0.4;
+    }
+    50% {
+      bottom: 36px;
+      opacity: 1;
+    }
+    100% {
+      bottom: 20px;
+      opacity: 0.4;
+    }
+  }
+}
